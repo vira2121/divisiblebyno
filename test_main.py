@@ -1,48 +1,30 @@
+import pytest
+
 import divisibility
+import pytest
+@pytest.mark.parametrize("num,output",[(5,True),(2,False),(10,True),(7,False)])
+def test_divby5(num,output):
+    out1 = divisibility.divby5(num)
 
-def test_divby5():
-    a = 10
-    out1 = divisibility.divby5(a)
-    assert out1 == True
+    assert out1 == output
 
+@pytest.mark.parametrize("num1,output1",[(14,True),(20,False),(21,True),(22,False)])
+def test_divby7(num1,output1):
 
-def test_divby5_1():
-    a = 14
-    out1 = divisibility.divby5(a)
-    assert out1 == False
+    out1 = divisibility.divby7(num1)
 
+    assert out1 == output1
 
-def test_divby7():
-    a = 10
-    out1 = divisibility.divby7(a)
-    assert out1 == False
+@pytest.mark.parametrize("num2,output2",[(18,True),(2,False),(27,True),(7,False)])
+def test_divby9(num2,output2):
 
+    out1 = divisibility.divby9(num2)
 
-def test_divby7_1():
-    a = 14
-    out1 = divisibility.divby7(a)
-    assert out1 == True
+    assert out1 == output2
 
+@pytest.mark.parametrize("num3,output3",[(22,True),(23,False),(44,True),(46,False)])
+def test_divby11(num3,output3):
 
-def test_divby9():
-    a = 10
-    out1 = divisibility.divby9(a)
-    assert out1 == False
+    out1 = divisibility.divby11(num3)
 
-
-def test_divby9_1():
-    a = 18
-    out1 = divisibility.divby9(a)
-    assert out1 == True
-
-
-def test_divby11():
-    a = 10
-    out1 = divisibility.divby11(a)
-    assert out1 == False
-
-
-def test_divby11_1():
-    a = 121
-    out1 = divisibility.divby11(a)
-    assert out1 == True
+    assert out1 == output3
